@@ -1,5 +1,6 @@
-package com.spring.security;
+package com.spring.security.domain;
 
+import com.spring.security.dto.request.JoinDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -48,7 +49,7 @@ public class Student {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createDate;
 
-    public static Student of(Student dto) {
+    public static Student of(JoinDto dto) {
         return Student.builder()
                 .id(dto.getId())
                 .password(dto.getPassword())
