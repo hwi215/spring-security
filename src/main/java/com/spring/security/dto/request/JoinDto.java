@@ -1,5 +1,8 @@
 package com.spring.security.dto.request;
 
+import com.spring.security.config.Role;
+import com.spring.security.domain.Student;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -22,4 +25,20 @@ public class JoinDto {
     private int state;
 
     private String registNumber;
+
+    private Role role;
+
+    @Builder
+    public Student of(){
+        return Student.builder()
+                .id(id)
+                .password(password)
+                .name(name)
+                .email(email)
+                .phone(phone)
+                .state(state)
+                .role(Role.STUDENT)
+                .registNumber(registNumber)
+                .build();
+    }
 }

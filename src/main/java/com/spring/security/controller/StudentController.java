@@ -22,7 +22,7 @@ public class StudentController {
     private final StudentService studentService;
     @PostMapping("/account/join")
     @ResponseBody
-    public ResponseEntity<BaseResponseDto<?>> join(@RequestBody JoinDto dto) {
+    public ResponseEntity<BaseResponseDto<?>> join(@RequestBody JoinDto dto){
         System.out.println("Controller 요청 받음");
         System.out.println("dto = " + dto);
         studentService.join(dto);
