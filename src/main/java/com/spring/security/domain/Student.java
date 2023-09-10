@@ -6,6 +6,7 @@ import com.spring.security.dto.request.JoinDto;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -27,7 +28,7 @@ public class Student {
     @Column(nullable = false, length = 40, unique = true)
     private String id;
 
-    @Column(nullable = false, length = 60)
+    @Column(nullable = false)
     private String password;
 
     @Column(nullable = false, length = 20)
@@ -48,7 +49,7 @@ public class Student {
     private Role role;
 
     public void addUserAuthority() {
-        this.role = Role.USER;
+        this.role = Role.STUDENT;
     }
 
     @Column(nullable = false, length = 20)
@@ -63,7 +64,6 @@ public class Student {
         this.password = passwordEncoder.encode(password);
     }
 
-    /*
     public static Student of(JoinDto dto) {
         return Student.builder()
                 .id(dto.getId())
@@ -77,5 +77,4 @@ public class Student {
                 .build();
     }
 
-     */
 }

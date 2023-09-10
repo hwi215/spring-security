@@ -28,6 +28,7 @@ public class JoinDto {
 
     private Role role;
 
+    /*
     @Builder
     public Student of(){
         return Student.builder()
@@ -41,4 +42,6 @@ public class JoinDto {
                 .registNumber(registNumber)
                 .build();
     }
+
+     */
 }
